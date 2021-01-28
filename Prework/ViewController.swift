@@ -20,21 +20,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var perPersonLabel: UILabel!
     @IBOutlet weak var partySizeControl: UIStepper!
     @IBOutlet weak var partySizeLabel: UILabel!
+    var perc1 = "15"
+    var perc2 = "18"
+    var perc3 = "20"
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         billAmountView.layer.cornerRadius = 10
         totalView.layer.cornerRadius = 10
         partySizeControl.minimumValue = 1
         partySizeControl.maximumValue = 50
-        
+    
         let defaults = UserDefaults.standard
-        let per1 = defaults.string(forKey: "percentage1") ?? "15"
-        let per2 = defaults.string(forKey: "percentage2") ?? "18"
-        let per3 = defaults.string(forKey: "percentage3") ?? "20"
+        perc1 = defaults.string(forKey: "percentage1") ?? "15"
+        perc2 = defaults.string(forKey: "percentage2") ?? "18"
+        perc3 = defaults.string(forKey: "percentage3") ?? "20"
         // not sending the right numbers from the settings view!
-        tipControl.setTitle(String(per1 + "%"), forSegmentAt: 0)
-        tipControl.setTitle(String(per2 + "%"), forSegmentAt: 1)
-        tipControl.setTitle(String(per3 + "%"), forSegmentAt: 2)
+        tipControl.setTitle(String(perc1 + "%"), forSegmentAt: 0)
+        tipControl.setTitle(String(perc2 + "%"), forSegmentAt: 1)
+        tipControl.setTitle(String(perc3 + "%"), forSegmentAt: 2)
 
     }
     override func viewDidLoad() {
@@ -53,7 +56,10 @@ class ViewController: UIViewController {
         subtotalLabel.text = String(format: "$%.2f", bill)
             
         // Get total tip my multiplying tip * tipPercentage
-        let tipPercentages = [0.15,0.18,0.2]
+        let per1 = (Double(perc1) ?? 0.15)/100.0
+        let per2 = (Double(perc2) ?? 0.18)/100.0
+        let per3 = (Double(perc3) ?? 0.20)/100.0
+        let tipPercentages = [per1,per2,per3]
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
         
