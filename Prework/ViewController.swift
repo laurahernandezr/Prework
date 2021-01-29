@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         tipControl.setTitle(String(perc3 + "%"), forSegmentAt: 2)
         
         //Make the bill amount the first responder so keyboard is always on
-        //billAmountTextField.becomeFirstResponder()
+        billAmountTextField.becomeFirstResponder()
 
     }
     override func viewDidLoad() {
