@@ -40,9 +40,7 @@ class ViewController: UIViewController {
         tipControl.setTitle(String(perc3 + "%"), forSegmentAt: 2)
         
         //Make the bill amount the first responder so keyboard is always on
-        billAmountTextField.becomeFirstResponder()
-        
-    
+        //billAmountTextField.becomeFirstResponder()
 
     }
     override func viewDidLoad() {
@@ -52,7 +50,7 @@ class ViewController: UIViewController {
        
     }
     @IBAction func calculateTip(_ sender: Any) {
-        
+    
         //1. Get bill amount from text field
         let bill = Double(billAmountTextField.text!) ?? 0
         // Get party size
@@ -61,6 +59,7 @@ class ViewController: UIViewController {
         subtotalLabel.text = String(format: "$%.2f", bill)
             
         // Get total tip my multiplying tip * tipPercentage
+
         let per1 = (Double(perc1) ?? 0.15)/100.0
         let per2 = (Double(perc2) ?? 0.18)/100.0
         let per3 = (Double(perc3) ?? 0.20)/100.0
@@ -72,6 +71,8 @@ class ViewController: UIViewController {
         let perPerson = total/Double(partySize)
         
         // Update tip amount label
+        
+        tipAmountLabel.text = String(format: "$%.2f", tip)
         tipAmountLabel.text = String(format: "$%.2f", tip)
         //Update Total Amount
         totalLabel.text = String(format: "$%.2f", total)
