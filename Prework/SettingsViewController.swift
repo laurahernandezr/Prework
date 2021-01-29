@@ -34,6 +34,8 @@ class SettingsViewController: UIViewController {
         percentage1Label.text = per1
         percentage2Label.text = per2
         percentage3Label.text = per3
+        
+        percentage1Label.becomeFirstResponder()
     }
 
 

@@ -34,10 +34,15 @@ class ViewController: UIViewController {
         perc1 = defaults.string(forKey: "percentage1") ?? "15"
         perc2 = defaults.string(forKey: "percentage2") ?? "18"
         perc3 = defaults.string(forKey: "percentage3") ?? "20"
-        // not sending the right numbers from the settings view!
+        
         tipControl.setTitle(String(perc1 + "%"), forSegmentAt: 0)
         tipControl.setTitle(String(perc2 + "%"), forSegmentAt: 1)
         tipControl.setTitle(String(perc3 + "%"), forSegmentAt: 2)
+        
+        //Make the bill amount the first responder so keyboard is always on
+        billAmountTextField.becomeFirstResponder()
+        
+    
 
     }
     override func viewDidLoad() {
