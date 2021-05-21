@@ -1,6 +1,6 @@
 # TipCalc
 
-**TipCal** is a tip calculator application for iOS.
+**TipCal** is a tip calculator application for iOS written in Swift.
 
 ## User Stories
 
