@@ -1,10 +1,6 @@
-# Pre-work - *TipCalc*
+# TipCalc
 
 **TipCal** is a tip calculator application for iOS.
-
-Submitted by: **Laura Hernandez Rincon**
-
-Time spent: **8** hours spent in total
 
 ## User Stories
 
@@ -38,8 +34,7 @@ GIF created with [Recordit](http://https://recordit.co/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
-  - The updated values from the settings took me some time to research how to connect to understand how to update the labels and amounts
+This was a prework assignment submited for CodePath.
 
 ## License
 
